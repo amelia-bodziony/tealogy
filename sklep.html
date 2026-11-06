@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="pl"><head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Sklep TEAlogy – herbaty liściaste, mieszanki ziołowe i profesjonalne akcesoria do parzenia. Filtruj, porównuj i wybieraj najlepszy liść.">
+<meta name="theme-color" content="#355443">
+<title>Sklep – TEAlogy</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&amp;family=DM+Serif+Display:ital@0;1&amp;display=swap" rel="stylesheet">
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet" crossorigin="anonymous">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header>
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top site-nav" aria-label="Nawigacja główna">
+<div class="container">
+<a class="navbar-brand brand-logo" href="index.html">TEA<span>logy</span></a>
+<div class="nav-actions d-flex align-items-center ms-auto ms-lg-2 me-2 me-lg-0 order-lg-last">
+<a class="nav-icon-link" href="konto.html" aria-label="Moje konto"><i class="bi bi-person" aria-hidden="true"></i></a>
+<a class="nav-icon-link" href="koszyk.html" aria-label="Koszyk, 2 produkty"><i class="bi bi-bag" aria-hidden="true"></i><span class="badge rounded-pill cart-badge" aria-hidden="true">2</span></a>
+</div>
+<button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Przełącz nawigację">
+<span class="navbar-toggler-icon"></span>
+</button>
+<div class="navbar-collapse collapse" id="mainNav">
+<ul class="navbar-nav ms-auto align-items-lg-center gap-lg-2">
+<li class="nav-item"><a class="nav-link" href="index.html#o-nas">O nas</a></li>
+<li class="nav-item"><a class="nav-link" href="index.html#oferta">Oferta</a></li>
+<li class="nav-item"><a class="nav-link active" href="sklep.html" aria-current="page">Sklep</a></li>
+<li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
+<li class="nav-item"><a class="nav-link" href="index.html#kontakt">Kontakt</a></li>
+<li class="nav-item mt-2 mt-lg-0 ms-lg-2">
+<a class="btn btn-accent btn-sm px-4" href="index.html#kontakt">Napisz do nas</a>
+</li>
+</ul>
+</div>
+</div>
+</nav>
+</header>
+
+  <section class="page-header">
+<div class="container">
+<div class="row">
+<div class="col-lg-8">
+<nav aria-label="breadcrumb">
+<ol class="breadcrumb">
+<li class="breadcrumb-item"><a href="index.html">Strona główna</a></li>
+<li class="breadcrumb-item active" aria-current="page">Sklep</li>
+</ol>
+</nav>
+<p class="eyebrow text-accent mb-3">Herbaty · Zioła · Akcesoria</p>
+<h1 class="page-header-title mb-3">Sklep TEAlogy</h1>
+<p class="page-header-lead mb-0">
+            Herbaty liściaste, mieszanki ziołowe i profesjonalne akcesoria do parzenia. Wybierz to, co wydobędzie z liścia pełnię smaku.
+</p>
+</div>
+</div>
+</div>
+</section>
+
+  <div class="section shop-section">
+<div class="container">
+<div class="row g-4 g-xl-5">
+
+        <aside class="col-lg-3" aria-label="Filtry produktów">
+<div class="offcanvas-lg offcanvas-start filter-sticky" tabindex="-1" id="filtry" aria-labelledby="filtry-etykieta">
+<div class="offcanvas-header">
+<h2 class="offcanvas-title h4" id="filtry-etykieta">Filtry</h2>
+<button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#filtry" aria-label="Zamknij filtry"></button>
+</div>
+<div class="offcanvas-body">
+<form class="filter-panel w-100" action="#" method="get">
+
+                <fieldset class="filter-group">
+<legend class="filter-title h5">Kategorie</legend>
+<div class="form-check"><input class="form-check-input" type="checkbox" id="kat-zielone" name="kategoria" value="zielone"><label class="form-check-label" for="kat-zielone">Herbaty zielone</label></div>
+<div class="form-check"><input class="form-check-input" type="checkbox" id="kat-czarne" name="kategoria" value="czarne"><label class="form-check-label" for="kat-czarne">Herbaty czarne</label></div>
+<div class="form-check"><input class="form-check-input" type="checkbox" id="kat-oolong" name="kategoria" value="oolong"><label class="form-check-label" for="kat-oolong">Oolong</label></div>
+<div class="form-check"><input class="form-check-input" type="checkbox" id="kat-ziola" name="kategoria" value="ziola"><label class="form-check-label" for="kat-ziola">Zioła i mieszanki</label></div>
+<div class="form-check"><input class="form-check-input" type="checkbox" id="kat-akcesoria" name="kategoria" value="akcesoria"><label class="form-check-label" for="kat-akcesoria">Akcesoria</label></div>
+</fieldset>
+
+                <div class="filter-group">
+<label for="cena-max" class="filter-title h5 d-block">Cena maksymalna</label>
+<input type="range" class="form-range" id="cena-max" name="cena_max" min="0" max="300" step="10" value="300">
+<div class="price-range-output" aria-live="polite"><span>0 zł</span><output id="cena-wartosc" for="cena-max">300 zł</output></div>
+</div>
+
+                <fieldset class="filter-group">
+<legend class="filter-title h5">Dostępność</legend>
+<div class="form-check"><input class="form-check-input" type="checkbox" id="dost-magazyn" name="dostepnosc" value="magazyn"><label class="form-check-label" for="dost-magazyn">W magazynie</label></div>
+<div class="form-check"><input class="form-check-input" type="checkbox" id="dost-promocje" name="dostepnosc" value="promocje"><label class="form-check-label" for="dost-promocje">Promocje</label></div>
+<div class="form-check"><input class="form-check-input" type="checkbox" id="dost-nowosci" name="dostepnosc" value="nowosci"><label class="form-check-label" for="dost-nowosci">Nowości</label></div>
+</fieldset>
+
+                <fieldset class="filter-group">
+<legend class="filter-title h5">Cechy</legend>
+<div class="form-check"><input class="form-check-input" type="checkbox" id="cecha-eko" name="cecha" value="eko"><label class="form-check-label" for="cecha-eko">Certyfikat eko</label></div>
+<div class="form-check"><input class="form-check-input" type="checkbox" id="cecha-reczne" name="cecha" value="reczne"><label class="form-check-label" for="cecha-reczne">Wykonane ręcznie</label></div>
+<div class="form-check"><input class="form-check-input" type="checkbox" id="cecha-sypana" name="cecha" value="sypana"><label class="form-check-label" for="cecha-sypana">Herbata sypana (liście)</label></div>
+</fieldset>
+
+                <div class="filter-group d-grid gap-2">
+<button type="submit" class="btn btn-primary">Zastosuj filtry</button>
+<button type="reset" class="btn btn-outline-primary">Wyczyść filtry</button>
+</div>
+
+              </form>
+</div>
+</div>
+</aside>
+
+        <main class="col-lg-9">
+
+          <div class="shop-toolbar">
+<div class="d-flex align-items-center gap-3">
+<button class="btn btn-outline-primary btn-sm d-lg-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#filtry" aria-controls="filtry"><i class="bi bi-sliders me-1" aria-hidden="true"></i>Filtry</button>
+<p class="mb-0" role="status">Znaleziono <strong>9</strong> produktów</p>
+</div>
+<div class="d-flex align-items-center gap-2">
+<label for="sortowanie" class="form-label mb-0">Sortuj:</label>
+<select class="form-select form-select-sm" id="sortowanie" name="sortowanie">
+<option value="popularnosc" selected>Popularność</option>
+<option value="cena-rosnaco">Cena: od najniższej</option>
+<option value="cena-malejaco">Cena: od najwyższej</option>
+<option value="nazwa">Nazwa: A–Z</option>
+</select>
+</div>
+</div>
+
+          <div class="row g-4">
+<div class="col-sm-6 col-xl-4">
+<article class="card product-card h-100">
+<div class="product-media">
+<img src="https://images.unsplash.com/photo-1563822249548-9a72b6353cd1?q=80&amp;w=800&amp;auto=format&amp;fit=crop" class="card-img-top" alt="Sencha Premium, 50 g" loading="lazy" width="800" height="800">
+<span class="product-badge product-badge--bestseller">Bestseller</span>
+</div>
+<div class="card-body">
+<p class="product-category">Herbata zielona</p>
+<h3 class="card-title h5 product-title">Sencha Premium, 50 g</h3>
+<div class="product-rating" role="img" aria-label="Ocena 4,8 na 5, 126 opinii">
+<span class="rating-stars" aria-hidden="true"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></span>
+<span class="rating-count" aria-hidden="true">4,8 (126)</span>
+</div>
+<p class="product-price"><span class="price-current"><span class="visually-hidden">Cena: </span>39,00 zł</span></p>
+<a href="produkt.html" class="btn btn-primary btn-sm px-4 stretched-link product-cta">Zobacz szczegóły</a>
+</div>
+</article>
+</div>
+<div class="col-sm-6 col-xl-4">
+<article class="card product-card h-100">
+<div class="product-media">
+<img src="https://images.unsplash.com/photo-1544787219-7f47ccb76574?q=80&amp;w=800&amp;auto=format&amp;fit=crop" class="card-img-top" alt="Oolong Tie Guan Yin, 50 g" loading="lazy" width="800" height="800">
+</div>
+<div class="card-body">
+<p class="product-category">Oolong</p>
+<h3 class="card-title h5 product-title">Oolong Tie Guan Yin, 50 g</h3>
+<div class="product-rating" role="img" aria-label="Ocena 4,7 na 5, 64 opinii">
+<span class="rating-stars" aria-hidden="true"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-half"></i></span>
+<span class="rating-count" aria-hidden="true">4,7 (64)</span>
+</div>
+<p class="product-price"><span class="price-current"><span class="visually-hidden">Cena: </span>54,00 zł</span></p>
+<a href="produkt.html" class="btn btn-primary btn-sm px-4 stretched-link product-cta">Zobacz szczegóły</a>
+</div>
+</article>
+</div>
+<div class="col-sm-6 col-xl-4">
+<article class="card product-card h-100">
+<div class="product-media">
+<img src="https://images.unsplash.com/photo-1597318181409-cf64d0b5d8a2?q=80&amp;w=800&amp;auto=format&amp;fit=crop" class="card-img-top" alt="Mieszanka ziołowa „Wieczorny spokój", 80 g" loading="lazy" width="800" height="800">
+</div>
+<div class="card-body">
+<p class="product-category">Zioła i mieszanki</p>
+<h3 class="card-title h5 product-title">Mieszanka ziołowa „Wieczorny spokój", 80 g</h3>
+<div class="product-rating" role="img" aria-label="Ocena 4,6 na 5, 88 opinii">
+<span class="rating-stars" aria-hidden="true"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-half"></i></span>
+<span class="rating-count" aria-hidden="true">4,6 (88)</span>
+</div>
+<p class="product-price"><span class="price-current"><span class="visually-hidden">Cena: </span>29,00 zł</span></p>
+<a href="produkt.html" class="btn btn-primary btn-sm px-4 stretched-link product-cta">Zobacz szczegóły</a>
+</div>
+</article>
+</div>
+<div class="col-sm-6 col-xl-4">
+<article class="card product-card h-100">
+<div class="product-media">
+<img src="https://images.unsplash.com/photo-1576092768241-dec231879fc3?q=80&amp;w=800&amp;auto=format&amp;fit=crop" class="card-img-top" alt="Gaiwan porcelanowy, 120 ml" loading="lazy" width="800" height="800">
+</div>
+<div class="card-body">
+<p class="product-category">Akcesoria</p>
+<h3 class="card-title h5 product-title">Gaiwan porcelanowy, 120 ml</h3>
+<div class="product-rating" role="img" aria-label="Ocena 4,9 na 5, 41 opinii">
+<span class="rating-stars" aria-hidden="true"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></span>
+<span class="rating-count" aria-hidden="true">4,9 (41)</span>
+</div>
+<p class="product-price"><span class="price-current"><span class="visually-hidden">Cena: </span>129,00 zł</span></p>
+<a href="produkt.html" class="btn btn-primary btn-sm px-4 stretched-link product-cta">Zobacz szczegóły</a>
+</div>
+</article>
+</div>
+<div class="col-sm-6 col-xl-4">
+<article class="card product-card h-100">
+<div class="product-media">
+<img src="https://images.unsplash.com/photo-1641997825980-cbaf406765db?q=80&amp;w=800&amp;auto=format&amp;fit=crop" class="card-img-top" alt="Czajnik żeliwny Tetsubin, 0,8 l" loading="lazy" width="800" height="800">
+<span class="product-badge product-badge--sale">Promocja</span>
+</div>
+<div class="card-body">
+<p class="product-category">Akcesoria</p>
+<h3 class="card-title h5 product-title">Czajnik żeliwny Tetsubin, 0,8 l</h3>
+<div class="product-rating" role="img" aria-label="Ocena 4,9 na 5, 37 opinii">
+<span class="rating-stars" aria-hidden="true"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></span>
+<span class="rating-count" aria-hidden="true">4,9 (37)</span>
+</div>
+<p class="product-price"><span class="price-current"><span class="visually-hidden">Cena promocyjna: </span>289,00 zł</span> <s class="price-old"><span class="visually-hidden">Cena regularna: </span>329,00 zł</s></p>
+<a href="produkt.html" class="btn btn-primary btn-sm px-4 stretched-link product-cta">Zobacz szczegóły</a>
+</div>
+</article>
+</div>
+<div class="col-sm-6 col-xl-4">
+<article class="card product-card h-100">
+<div class="product-media">
+<img src="https://images.unsplash.com/photo-1515823064-d6e0c04616a7?q=80&amp;w=800&amp;auto=format&amp;fit=crop" class="card-img-top" alt="Zestaw do matchy (czasza, miotełka, łyżeczka)" loading="lazy" width="800" height="800">
+<span class="product-badge product-badge--new">Nowość</span>
+</div>
+<div class="card-body">
+<p class="product-category">Akcesoria</p>
+<h3 class="card-title h5 product-title">Zestaw do matchy (czasza, miotełka, łyżeczka)</h3>
+<div class="product-rating" role="img" aria-label="Ocena 4,5 na 5, 19 opinii">
+<span class="rating-stars" aria-hidden="true"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-half"></i></span>
+<span class="rating-count" aria-hidden="true">4,5 (19)</span>
+</div>
+<p class="product-price"><span class="price-current"><span class="visually-hidden">Cena: </span>169,00 zł</span></p>
+<a href="produkt.html" class="btn btn-primary btn-sm px-4 stretched-link product-cta">Zobacz szczegóły</a>
+</div>
+</article>
+</div>
+<div class="col-sm-6 col-xl-4">
+<article class="card product-card h-100">
+<div class="product-media">
+<img src="https://images.unsplash.com/photo-1564890369478-c89ca6d9cde9?q=80&amp;w=800&amp;auto=format&amp;fit=crop" class="card-img-top" alt="Assam TGFOP, 100 g" loading="lazy" width="800" height="800">
+</div>
+<div class="card-body">
+<p class="product-category">Herbata czarna</p>
+<h3 class="card-title h5 product-title">Assam TGFOP, 100 g</h3>
+<div class="product-rating" role="img" aria-label="Ocena 4,6 na 5, 73 opinii">
+<span class="rating-stars" aria-hidden="true"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-half"></i></span>
+<span class="rating-count" aria-hidden="true">4,6 (73)</span>
+</div>
+<p class="product-price"><span class="price-current"><span class="visually-hidden">Cena: </span>34,00 zł</span></p>
+<a href="produkt.html" class="btn btn-primary btn-sm px-4 stretched-link product-cta">Zobacz szczegóły</a>
+</div>
+</article>
+</div>
+<div class="col-sm-6 col-xl-4">
+<article class="card product-card h-100">
+<div class="product-media">
+<img src="https://images.unsplash.com/photo-1556679343-c7306c1976bc?q=80&amp;w=800&amp;auto=format&amp;fit=crop" class="card-img-top" alt="Czarka ceramiczna ręcznie robiona, 150 ml" loading="lazy" width="800" height="800">
+<span class="product-badge product-badge--sale">Promocja</span>
+</div>
+<div class="card-body">
+<p class="product-category">Akcesoria</p>
+<h3 class="card-title h5 product-title">Czarka ceramiczna ręcznie robiona, 150 ml</h3>
+<div class="product-rating" role="img" aria-label="Ocena 4,8 na 5, 52 opinii">
+<span class="rating-stars" aria-hidden="true"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></span>
+<span class="rating-count" aria-hidden="true">4,8 (52)</span>
+</div>
+<p class="product-price"><span class="price-current"><span class="visually-hidden">Cena promocyjna: </span>59,00 zł</span> <s class="price-old"><span class="visually-hidden">Cena regularna: </span>69,00 zł</s></p>
+<a href="produkt.html" class="btn btn-primary btn-sm px-4 stretched-link product-cta">Zobacz szczegóły</a>
+</div>
+</article>
+</div>
+<div class="col-sm-6 col-xl-4">
+<article class="card product-card h-100">
+<div class="product-media">
+<img src="https://images.unsplash.com/photo-1567922045116-2a00fae2ed03?q=80&amp;w=800&amp;auto=format&amp;fit=crop" class="card-img-top" alt="Zaparzacz stalowy do kubka" loading="lazy" width="800" height="800">
+</div>
+<div class="card-body">
+<p class="product-category">Akcesoria</p>
+<h3 class="card-title h5 product-title">Zaparzacz stalowy do kubka</h3>
+<div class="product-rating" role="img" aria-label="Ocena 4,4 na 5, 95 opinii">
+<span class="rating-stars" aria-hidden="true"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-half"></i></span>
+<span class="rating-count" aria-hidden="true">4,4 (95)</span>
+</div>
+<p class="product-price"><span class="price-current"><span class="visually-hidden">Cena: </span>24,00 zł</span></p>
+<a href="produkt.html" class="btn btn-primary btn-sm px-4 stretched-link product-cta">Zobacz szczegóły</a>
+</div>
+</article>
+</div>
+</div>
+
+          <nav class="mt-5" aria-label="Paginacja produktów">
+<ul class="pagination justify-content-center mb-0">
+<li class="page-item disabled">
+<a class="page-link" href="#" tabindex="-1" aria-disabled="true">Poprzednia</a>
+</li>
+<li class="page-item active" aria-current="page"><a class="page-link" href="#">1</a></li>
+<li class="page-item"><a class="page-link" href="#">2</a></li>
+<li class="page-item"><a class="page-link" href="#">3</a></li>
+<li class="page-item">
+<a class="page-link" href="#">Następna</a>
+</li>
+</ul>
+</nav>
+
+        </main>
+
+      </div>
+</div>
+</div>
+
+  <footer class="site-footer">
+<div class="container">
+<div class="row g-4 align-items-center">
+<div class="col-md-6 text-center text-md-start">
+<a class="brand-logo footer-logo" href="index.html">TEA<span>logy</span></a>
+<p class="mb-0 mt-2 footer-meta">
+            TEAlogy sp. z o.o. · ul. Spokojna 12, 00-950 Warszawa<br>
+            NIP: 525-000-00-00 · REGON: 000000000
+</p>
+</div>
+<div class="col-md-6 text-center text-md-end">
+<p class="mb-0 footer-meta">© 2026 TEAlogy. Wszelkie prawa zastrzeżone.</p>
+</div>
+</div>
+</div>
+</footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+<script>
+    document.querySelectorAll('#mainNav a').forEach(function (link) {
+      link.addEventListener('click', function () {
+        var menu = document.getElementById('mainNav');
+        if (menu.classList.contains('show')) {
+          bootstrap.Collapse.getOrCreateInstance(menu).hide();
+        }
+      });
+    });
+</script>
+
+  <script>
+    var range = document.getElementById('cena-max');
+    var output = document.getElementById('cena-wartosc');
+    if (range && output) {
+      range.addEventListener('input', function () { output.textContent = range.value + ' zł'; });
+      range.form.addEventListener('reset', function () { setTimeout(function () { output.textContent = range.value + ' zł'; }, 0); });
+    }
+</script>
+
+</body></html>
