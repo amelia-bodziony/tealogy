@@ -16,31 +16,7 @@
 </head>
 <body>
 
-  <header>
-<nav class="navbar navbar-expand-lg navbar-dark fixed-top site-nav" aria-label="Nawigacja główna">
-<div class="container">
-<a class="navbar-brand brand-logo" href="index.html">TEA<span>logy</span></a>
-<div class="nav-actions d-flex align-items-center ms-auto ms-lg-2 me-2 me-lg-0 order-lg-last">
-<a class="nav-icon-link" href="konto.html" aria-label="Moje konto"><i class="bi bi-person" aria-hidden="true"></i></a>
-<a class="nav-icon-link active" href="koszyk.html" aria-label="Koszyk, 2 produkty" aria-current="page"><i class="bi bi-bag" aria-hidden="true"></i><span class="badge rounded-pill cart-badge" aria-hidden="true">2</span></a>
-</div>
-<button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Przełącz nawigację">
-<span class="navbar-toggler-icon"></span>
-</button>
-<div class="navbar-collapse collapse" id="mainNav">
-<ul class="navbar-nav ms-auto align-items-lg-center gap-lg-2">
-<li class="nav-item"><a class="nav-link" href="index.html#o-nas">O nas</a></li>
-<li class="nav-item"><a class="nav-link" href="sklep.html">Sklep</a></li>
-<li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
-<li class="nav-item"><a class="nav-link" href="index.html#kontakt">Kontakt</a></li>
-<li class="nav-item mt-2 mt-lg-0 ms-lg-2">
-<a class="btn btn-accent btn-sm px-4" href="index.html#kontakt">Napisz do nas</a>
-</li>
-</ul>
-</div>
-</div>
-</nav>
-</header>
+  <header id="site-header"></header>
 
   <main class="shop-page">
 <div class="container">
@@ -53,9 +29,15 @@
 </ol>
 </nav>
 
-      <h1 class="section-title mb-4">Twój koszyk</h1>
+      <h1 class="section-title mb-4" tabindex="-1">Twój koszyk</h1>
 
-      <div class="row g-4 g-xl-5">
+      <div id="cart-empty" class="empty-cart" hidden="">
+<p class="h4 mb-2">Twój koszyk jest pusty</p>
+<p class="text-muted-brand mb-4">Dodaj do niego herbatę lub akcesoria, a zobaczysz tu podsumowanie zamówienia.</p>
+<a href="sklep.html" class="btn btn-primary btn-lg px-5">Przejdź do sklepu</a>
+</div>
+
+      <div id="cart-content" class="row g-4 g-xl-5" hidden="">
 
         <div class="col-lg-8">
 <div class="table-responsive">
@@ -70,48 +52,7 @@
 <th scope="col">Akcja</th>
 </tr>
 </thead>
-<tbody>
-<tr>
-<td>
-<div class="cart-product">
-<img src="https://images.unsplash.com/photo-1628153792464-21bffac488d4?q=80&amp;w=880&amp;auto=format&amp;fit=crop&amp;ixlib=rb-4.1.0&amp;ixid=NHwxMjA3fDA%3D" class="cart-thumb" alt="" width="200" height="200" loading="lazy">
-<div>
-<a href="produkt.html" class="fw-bold text-decoration-none">Sencha Premium, 50 g</a><br>
-<small class="text-muted-brand">Herbata zielona</small>
-</div>
-</div>
-</td>
-<td>39,00 zł</td>
-<td>
-<label class="visually-hidden" for="ilosc-1">Ilość: Sencha Premium, 50 g</label>
-<input type="number" class="form-control cart-qty" id="ilosc-1" name="ilosc-1" value="2" min="1" max="20">
-</td>
-<td class="fw-bold">78,00 zł</td>
-<td>
-<button type="button" class="cart-remove" aria-label="Usuń z koszyka: Sencha Premium, 50 g"><i class="bi bi-trash" aria-hidden="true"></i></button>
-</td>
-</tr>
-<tr>
-<td>
-<div class="cart-product">
-<img src="https://images.unsplash.com/photo-1649868592193-f1474cb13be9?q=80&amp;w=1470&amp;auto=format&amp;fit=crop&amp;ixlib=rb-4.1.0&amp;ixid=NHwxMjA3fDA%3D" class="cart-thumb" alt="" width="200" height="200" loading="lazy">
-<div>
-<a href="produkt.html" class="fw-bold text-decoration-none">Gaiwan porcelanowy, 120 ml</a><br>
-<small class="text-muted-brand">Akcesoria</small>
-</div>
-</div>
-</td>
-<td>129,00 zł</td>
-<td>
-<label class="visually-hidden" for="ilosc-2">Ilość: Gaiwan porcelanowy, 120 ml</label>
-<input type="number" class="form-control cart-qty" id="ilosc-2" name="ilosc-2" value="1" min="1" max="20">
-</td>
-<td class="fw-bold">129,00 zł</td>
-<td>
-<button type="button" class="cart-remove" aria-label="Usuń z koszyka: Gaiwan porcelanowy, 120 ml"><i class="bi bi-trash" aria-hidden="true"></i></button>
-</td>
-</tr>
-</tbody>
+<tbody id="cart-body"></tbody>
 </table>
 </div>
 
@@ -130,10 +71,10 @@
         <div class="col-lg-4">
 <aside class="summary-card summary-sticky" aria-labelledby="podsumowanie-tytul">
 <h2 id="podsumowanie-tytul" class="h4 mb-3">Podsumowanie zamówienia</h2>
-<div class="summary-row"><span>Suma częściowa</span><span>207,00 zł</span></div>
-<div class="summary-row"><span>Szacowany koszt dostawy</span><span>14,99 zł</span></div>
-<div class="summary-row summary-total"><span>Łącznie brutto</span><span>221,99 zł</span></div>
-<p class="small text-muted-brand mt-3 mb-4"><i class="bi bi-truck me-2" aria-hidden="true"></i>Darmowa dostawa od 250 zł. Do darmowej dostawy brakuje Ci jeszcze 43,00 zł.</p>
+<div class="summary-row"><span>Suma częściowa</span><span id="sum-subtotal">0,00 zł</span></div>
+<div class="summary-row"><span>Szacowany koszt dostawy</span><span id="sum-shipping">0,00 zł</span></div>
+<div class="summary-row summary-total"><span>Łącznie brutto</span><span id="sum-total">0,00 zł</span></div>
+<p class="small text-muted-brand mt-3 mb-4"><i class="bi bi-truck me-2" aria-hidden="true"></i><span id="shipping-note-text"></span></p>
 <a href="zamowienie.html" class="btn btn-primary btn-lg w-100">Przejdź do kasy</a>
 </aside>
 </div>
@@ -142,35 +83,9 @@
 </div>
 </main>
 
-  <footer class="site-footer">
-<div class="container">
-<div class="row g-4 align-items-center">
-<div class="col-md-6 text-center text-md-start">
-<a class="brand-logo footer-logo" href="index.html">TEA<span>logy</span></a>
-<p class="mb-0 mt-2 footer-meta">
-            TEAlogy sp. z o.o. · ul. Spokojna 12, 00-950 Warszawa<br>
-            NIP: 525-000-00-00 · REGON: 000000000
-</p>
-</div>
-<div class="col-md-6 text-center text-md-end">
-<p class="mb-0 footer-meta">© 2026 TEAlogy. Wszelkie prawa zastrzeżone.</p>
-</div>
-</div>
-</div>
-</footer>
+  <footer class="site-footer" id="site-footer"></footer>
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
-<script>
-    document.querySelectorAll('#mainNav a').forEach(function (link) {
-      link.addEventListener('click', function () {
-        var menu = document.getElementById('mainNav');
-        if (menu.classList.contains('show')) {
-          bootstrap.Collapse.getOrCreateInstance(menu).hide();
-        }
-      });
-    });
-</script>
-
-
-
+  <script src="cart.js"></script>
+<script src="layout.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
 </body></html>
