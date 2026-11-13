@@ -1724,3 +1724,189 @@ a { transition: color 0.2s ease; }
 #order-empty { color: var(--brand-muted); }
 
 h1[tabindex="-1"]:focus { outline: none; }
+
+
+/* STRONY POMOCNICZE I STOPKA */
+
+/* ---------- Kontakt ---------- */
+.contact-page { padding: 3.5rem 0 4.5rem; }
+
+@media (min-width: 992px) {
+ .contact-page { padding: 5rem 0 6rem; }
+ }
+
+.map-frame {
+ overflow: hidden;
+ border: 1px solid var(--bs-border-color);
+ border-radius: 1rem;
+ background-color: var(--brand-cream);
+ }
+
+.map-frame iframe { border: 0; }
+
+.directions-list li {
+ display: flex;
+ align-items: flex-start;
+ gap: 0.75rem;
+ padding: 0.75rem 0;
+ }
+
+.directions-list li + li { border-top: 1px solid var(--bs-border-color); }
+
+.directions-list .bi {
+ flex: 0 0 auto;
+ font-size: 1.25rem;
+ line-height: 1.5;
+ color: var(--brand-primary);
+ }
+
+.form-card .form-status:not(:empty) {
+ padding: 0.75rem 1rem;
+ border-radius: 0.75rem;
+ background-color: var(--brand-cream);
+ color: var(--brand-primary);
+ font-weight: 500;
+ }
+
+/* ---------- Polityka prywatności ---------- */
+.legal-doc .article-body h2 { margin-top: 2.75rem; }
+
+.legal-doc .article-body code {
+ padding: 0.1rem 0.4rem;
+ border-radius: 0.4rem;
+ background-color: var(--brand-cream);
+ color: var(--brand-primary);
+ font-size: 0.875em;
+ }
+
+.legal-doc .article-table th,
+ .legal-doc .article-table td { vertical-align: top; }
+
+.legal-doc .article-table thead th { white-space: normal; }
+
+/* ---------- Strona 404 ---------- */
+.error-page {
+ min-height: 100vh;
+ min-height: 100svh;
+ padding: calc(var(--nav-height) + 2rem) 0 3rem;
+ }
+
+.error-code {
+ margin-bottom: 0;
+ font-family: var(--font-heading);
+ font-size: clamp(6rem, 22vw, 12rem);
+ line-height: 1;
+ color: var(--brand-accent);
+ }
+
+.error-lead {
+ max-width: 36rem;
+ font-size: 1.125rem;
+ color: var(--brand-muted);
+ }
+
+.error-search { max-width: 28rem; }
+
+/* ---------- Stopka korporacyjna ---------- */
+.site-footer {
+ padding: 4rem 0 0;
+ font-size: 0.95rem;
+ }
+
+.footer-main { padding-bottom: 3rem; }
+
+.footer-about {
+ margin-bottom: 1.25rem;
+ line-height: 1.7;
+ }
+
+.footer-title {
+ margin-bottom: 1rem;
+ font-family: var(--font-body);
+ font-size: 0.8rem;
+ font-weight: 700;
+ letter-spacing: 0.16em;
+ text-transform: uppercase;
+ color: var(--brand-cream);
+ }
+
+.footer-links a,
+ .footer-contact a,
+ .footer-legal-link {
+ color: rgba(242, 235, 221, 0.7);
+ text-decoration: none;
+ }
+
+.footer-links a {
+ display: inline-flex;
+ align-items: center;
+ min-height: 44px;
+ }
+
+.footer-links a:hover,
+ .footer-contact a:hover,
+ .footer-legal-link:hover {
+ color: var(--brand-white);
+ text-decoration: underline;
+ text-underline-offset: 0.25em;
+ }
+
+.footer-social-link {
+ display: inline-flex;
+ align-items: center;
+ justify-content: center;
+ width: 44px;
+ height: 44px;
+ border: 1px solid rgba(242, 235, 221, 0.35);
+ border-radius: 50%;
+ color: var(--brand-cream);
+ font-size: 1.1rem;
+ text-decoration: none;
+ transition: background-color 0.2s ease, color 0.2s ease;
+ }
+
+.footer-social-link:hover {
+ background-color: var(--brand-cream);
+ color: var(--brand-primary);
+ }
+
+.footer-newsletter .form-control {
+ min-width: 0;
+ border-radius: 999px 0 0 999px;
+ }
+
+.footer-newsletter .btn { border-radius: 0 999px 999px 0; }
+
+.footer-newsletter .form-status { color: var(--brand-cream); }
+
+.footer-contact li {
+ display: flex;
+ align-items: center;
+ gap: 0.6rem;
+ min-height: 44px;
+ }
+
+.footer-contact .bi { color: var(--brand-accent); }
+
+.footer-legal-link {
+ display: inline-flex;
+ align-items: center;
+ min-height: 44px;
+ }
+
+.footer-bottom {
+ padding: 1rem 0;
+ border-top: 1px solid rgba(242, 235, 221, 0.15);
+ background-color: rgba(0, 0, 0, 0.18);
+ }
+
+@media (prefers-reduced-motion: reduce) {
+ .footer-social-link { transition: none; }
+ }
+
+/* Zabezpieczenie przed poziomym paskiem przewijania na telefonach i tabletach */
+html, body { max-width: 100%; }
+
+html { overflow-x: hidden; }
+
+body { overflow-x: clip; }
