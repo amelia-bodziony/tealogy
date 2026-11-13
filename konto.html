@@ -16,31 +16,7 @@
 </head>
 <body>
 
-  <header>
-<nav class="navbar navbar-expand-lg navbar-dark fixed-top site-nav" aria-label="Nawigacja główna">
-<div class="container">
-<a class="navbar-brand brand-logo" href="index.html">TEA<span>logy</span></a>
-<div class="nav-actions d-flex align-items-center ms-auto ms-lg-2 me-2 me-lg-0 order-lg-last">
-<a class="nav-icon-link active" href="konto.html" aria-label="Moje konto" aria-current="page"><i class="bi bi-person" aria-hidden="true"></i></a>
-<a class="nav-icon-link" href="koszyk.html" aria-label="Koszyk, 2 produkty"><i class="bi bi-bag" aria-hidden="true"></i><span class="badge rounded-pill cart-badge" aria-hidden="true">2</span></a>
-</div>
-<button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Przełącz nawigację">
-<span class="navbar-toggler-icon"></span>
-</button>
-<div class="navbar-collapse collapse" id="mainNav">
-<ul class="navbar-nav ms-auto align-items-lg-center gap-lg-2">
-<li class="nav-item"><a class="nav-link" href="index.html#o-nas">O nas</a></li>
-<li class="nav-item"><a class="nav-link" href="sklep.html">Sklep</a></li>
-<li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
-<li class="nav-item"><a class="nav-link" href="index.html#kontakt">Kontakt</a></li>
-<li class="nav-item mt-2 mt-lg-0 ms-lg-2">
-<a class="btn btn-accent btn-sm px-4" href="index.html#kontakt">Napisz do nas</a>
-</li>
-</ul>
-</div>
-</div>
-</nav>
-</header>
+  <header id="site-header"></header>
 
   <main class="shop-page">
 <div class="container">
@@ -66,10 +42,7 @@
 
         <div class="col-lg-9">
 
-          <div class="alert alert-success alert-dismissible fade show mb-4" role="alert" id="komunikat-zamowienie">
-<strong>Dziękujemy za zakupy!</strong> Zamówienie TEA-2026-0148 zostało przyjęte i jest w realizacji. Potwierdzenie wysłaliśmy na adres anna@example.com.
-<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Zamknij komunikat"></button>
-</div>
+          
 
           <section id="pulpit" aria-labelledby="pulpit-tytul">
 <h1 id="pulpit-tytul" class="section-title mb-2">Witaj, Anna!</h1>
@@ -176,36 +149,12 @@
 </div>
 </main>
 
-  <footer class="site-footer">
-<div class="container">
-<div class="row g-4 align-items-center">
-<div class="col-md-6 text-center text-md-start">
-<a class="brand-logo footer-logo" href="index.html">TEA<span>logy</span></a>
-<p class="mb-0 mt-2 footer-meta">
-            TEAlogy sp. z o.o. · ul. Spokojna 12, 00-950 Warszawa<br>
-            NIP: 525-000-00-00 · REGON: 000000000
-</p>
-</div>
-<div class="col-md-6 text-center text-md-end">
-<p class="mb-0 footer-meta">© 2026 TEAlogy. Wszelkie prawa zastrzeżone.</p>
-</div>
-</div>
-</div>
-</footer>
+  <footer class="site-footer" id="site-footer"></footer>
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+  <script src="cart.js"></script>
+<script src="layout.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
 <script>
-    document.querySelectorAll('#mainNav a').forEach(function (link) {
-      link.addEventListener('click', function () {
-        var menu = document.getElementById('mainNav');
-        if (menu.classList.contains('show')) {
-          bootstrap.Collapse.getOrCreateInstance(menu).hide();
-        }
-      });
-    });
-</script>
-
-  <script>
     (function () {
       var note = document.getElementById('komunikat-zamowienie');
       if (note && !/[?&]zamowienie=ok/.test(window.location.search)) { note.remove(); }
