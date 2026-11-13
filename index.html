@@ -16,31 +16,7 @@
 </head>
 <body>
 
-  <header>
-<nav class="navbar navbar-expand-lg navbar-dark fixed-top site-nav" aria-label="Nawigacja główna">
-<div class="container">
-<a class="navbar-brand brand-logo" href="#hero">TEA<span>logy</span></a>
-<div class="nav-actions d-flex align-items-center ms-auto ms-lg-2 me-2 me-lg-0 order-lg-last">
-<a class="nav-icon-link" href="konto.html" aria-label="Moje konto"><i class="bi bi-person" aria-hidden="true"></i></a>
-<a class="nav-icon-link" href="koszyk.html" aria-label="Koszyk, 2 produkty"><i class="bi bi-bag" aria-hidden="true"></i><span class="badge rounded-pill cart-badge" aria-hidden="true">2</span></a>
-</div>
-<button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Przełącz nawigację">
-<span class="navbar-toggler-icon"></span>
-</button>
-<div class="navbar-collapse collapse" id="mainNav">
-<ul class="navbar-nav ms-auto align-items-lg-center gap-lg-2">
-<li class="nav-item"><a class="nav-link" href="#o-nas">O nas</a></li>
-<li class="nav-item"><a class="nav-link" href="sklep.html">Sklep</a></li>
-<li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
-<li class="nav-item"><a class="nav-link" href="#kontakt">Kontakt</a></li>
-<li class="nav-item mt-2 mt-lg-0 ms-lg-2">
-<a class="btn btn-accent btn-sm px-4" href="#kontakt">Napisz do nas</a>
-</li>
-</ul>
-</div>
-</div>
-</nav>
-</header>
+  <header id="site-header"></header>
 
   <main>
 
@@ -176,7 +152,10 @@
 <span class="rating-count" aria-hidden="true">4,8 (126)</span>
 </div>
 <p class="product-price"><span class="price-current"><span class="visually-hidden">Cena: </span>39,00 zł</span></p>
+<div class="product-actions">
 <a href="produkt.html" class="btn btn-primary btn-sm px-4 stretched-link product-cta">Zobacz produkt</a>
+<button type="button" class="btn btn-outline-primary btn-sm px-4 add-to-cart" data-id="sencha-50" aria-label="Dodaj do koszyka: Sencha Premium, 50 g">Do koszyka</button>
+</div>
 </div>
 </article>
 </div>
@@ -194,7 +173,10 @@
 <span class="rating-count" aria-hidden="true">4,9 (37)</span>
 </div>
 <p class="product-price"><span class="price-current"><span class="visually-hidden">Cena promocyjna: </span>289,00 zł</span> <s class="price-old"><span class="visually-hidden">Cena regularna: </span>329,00 zł</s></p>
+<div class="product-actions">
 <a href="produkt.html" class="btn btn-primary btn-sm px-4 stretched-link product-cta">Zobacz produkt</a>
+<button type="button" class="btn btn-outline-primary btn-sm px-4 add-to-cart" data-id="tetsubin" aria-label="Dodaj do koszyka: Czajnik żeliwny Tetsubin, 0,8 l">Do koszyka</button>
+</div>
 </div>
 </article>
 </div>
@@ -212,7 +194,10 @@
 <span class="rating-count" aria-hidden="true">4,5 (19)</span>
 </div>
 <p class="product-price"><span class="price-current"><span class="visually-hidden">Cena: </span>169,00 zł</span></p>
+<div class="product-actions">
 <a href="produkt.html" class="btn btn-primary btn-sm px-4 stretched-link product-cta">Zobacz produkt</a>
+<button type="button" class="btn btn-outline-primary btn-sm px-4 add-to-cart" data-id="matcha" aria-label="Dodaj do koszyka: Zestaw do matchy (czasza, miotełka, łyżeczka)">Do koszyka</button>
+</div>
 </div>
 </article>
 </div>
@@ -230,7 +215,10 @@
 <span class="rating-count" aria-hidden="true">4,8 (52)</span>
 </div>
 <p class="product-price"><span class="price-current"><span class="visually-hidden">Cena promocyjna: </span>59,00 zł</span> <s class="price-old"><span class="visually-hidden">Cena regularna: </span>69,00 zł</s></p>
+<div class="product-actions">
 <a href="produkt.html" class="btn btn-primary btn-sm px-4 stretched-link product-cta">Zobacz produkt</a>
+<button type="button" class="btn btn-outline-primary btn-sm px-4 add-to-cart" data-id="czarka" aria-label="Dodaj do koszyka: Czarka ceramiczna ręcznie robiona, 150 ml">Do koszyka</button>
+</div>
 </div>
 </article>
 </div>
@@ -273,7 +261,7 @@
 </div>
 <div class="col-md-4">
 <article class="card post-card h-100">
-<img src="https://images.unsplash.com/photo-1609321979677-66f6f757b31d?q=80&amp;w=1470&amp;auto=format&amp;fit=crop&amp;ixlib=rb-4.1.0&amp;ixid=NHwxMjA3fDA%3D" class="card-img-top" alt="Ceramiczne czarka do parzenia herbaty na stole" loading="lazy" width="800" height="533">
+<img src="https://images.unsplash.com/photo-1609321979677-66f6f757b31d?q=80&amp;w=1470&amp;auto=format&amp;fit=crop&amp;ixlib=rb-4.1.0&amp;ixid=NHwxMjA3fDA%3D" class="card-img-top" alt="Ceramiczna czarka do parzenia herbaty na stole" loading="lazy" width="800" height="533">
 <div class="card-body">
 <div class="post-meta">
 <span class="post-tag">Akcesoria</span>
@@ -381,35 +369,9 @@
 
   </main>
 
-  <footer class="site-footer">
-<div class="container">
-<div class="row g-4 align-items-center">
-<div class="col-md-6 text-center text-md-start">
-<a class="brand-logo footer-logo" href="#hero">TEA<span>logy</span></a>
-<p class="mb-0 mt-2 footer-meta">
-            TEAlogy sp. z o.o. · ul. Spokojna 12, 00-950 Warszawa<br>
-            NIP: 525-000-00-00 · REGON: 000000000
-</p>
-</div>
-<div class="col-md-6 text-center text-md-end">
-<p class="mb-0 footer-meta">© 2026 TEAlogy. Wszelkie prawa zastrzeżone.</p>
-</div>
-</div>
-</div>
-</footer>
+  <footer class="site-footer" id="site-footer"></footer>
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
-<script>
-    document.querySelectorAll('#mainNav a').forEach(function (link) {
-      link.addEventListener('click', function () {
-        var menu = document.getElementById('mainNav');
-        if (menu.classList.contains('show')) {
-          bootstrap.Collapse.getOrCreateInstance(menu).hide();
-        }
-      });
-    });
-</script>
-
-
-
+  <script src="cart.js"></script>
+<script src="layout.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
 </body></html>
