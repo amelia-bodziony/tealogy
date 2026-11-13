@@ -16,31 +16,7 @@
 </head>
 <body>
 
-  <header>
-<nav class="navbar navbar-expand-lg navbar-dark fixed-top site-nav" aria-label="Nawigacja główna">
-<div class="container">
-<a class="navbar-brand brand-logo" href="index.html">TEA<span>logy</span></a>
-<div class="nav-actions d-flex align-items-center ms-auto ms-lg-2 me-2 me-lg-0 order-lg-last">
-<a class="nav-icon-link" href="konto.html" aria-label="Moje konto"><i class="bi bi-person" aria-hidden="true"></i></a>
-<a class="nav-icon-link active" href="koszyk.html" aria-label="Koszyk, 2 produkty" aria-current="page"><i class="bi bi-bag" aria-hidden="true"></i><span class="badge rounded-pill cart-badge" aria-hidden="true">2</span></a>
-</div>
-<button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Przełącz nawigację">
-<span class="navbar-toggler-icon"></span>
-</button>
-<div class="navbar-collapse collapse" id="mainNav">
-<ul class="navbar-nav ms-auto align-items-lg-center gap-lg-2">
-<li class="nav-item"><a class="nav-link" href="index.html#o-nas">O nas</a></li>
-<li class="nav-item"><a class="nav-link" href="sklep.html">Sklep</a></li>
-<li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
-<li class="nav-item"><a class="nav-link" href="index.html#kontakt">Kontakt</a></li>
-<li class="nav-item mt-2 mt-lg-0 ms-lg-2">
-<a class="btn btn-accent btn-sm px-4" href="index.html#kontakt">Napisz do nas</a>
-</li>
-</ul>
-</div>
-</div>
-</nav>
-</header>
+  <header id="site-header"></header>
 
   <main class="shop-page">
 <div class="container">
@@ -55,7 +31,7 @@
 
       <h1 class="section-title mb-4">Złóż zamówienie</h1>
 
-      <form action="konto.html" method="get">
+      <form id="checkout-form" action="konto.html" method="get">
 <input type="hidden" name="zamowienie" value="ok">
 <div class="row g-4 g-xl-5">
 
@@ -78,7 +54,7 @@
 </div>
 <div class="col-md-6">
 <label for="kod-pocztowy" class="form-label">Kod pocztowy</label>
-<input type="text" class="form-control" id="kod-pocztowy" name="kod-pocztowy" autocomplete="postal-code" placeholder="00-950" inputmode="numeric" pattern="\d{{2}}-\d{{3}}" title="Kod w formacie 00-000" required="">
+<input type="text" class="form-control" id="kod-pocztowy" name="kod-pocztowy" autocomplete="postal-code" placeholder="00-950" inputmode="numeric" pattern="\d{2}-\d{3}" title="Kod w formacie 00-000" required="">
 </div>
 <div class="col-md-6">
 <label for="miasto" class="form-label">Miasto</label>
@@ -164,20 +140,12 @@
           <div class="col-lg-5">
 <aside class="summary-card summary-sticky" aria-labelledby="twoje-zamowienie">
 <h2 id="twoje-zamowienie" class="h4 mb-3">Twoje zamówienie</h2>
-<div class="summary-item">
-<img src="https://images.unsplash.com/photo-1628153792464-21bffac488d4?q=80&amp;w=880&amp;auto=format&amp;fit=crop&amp;ixlib=rb-4.1.0&amp;ixid=NHwxMjA3fDA%3D" class="summary-thumb" alt="" width="200" height="200" loading="lazy">
-<div class="summary-item-name">Sencha Premium, 50 g<br><small class="text-muted-brand">2 × 39,00 zł</small></div>
-<span class="fw-bold">78,00 zł</span>
-</div>
-<div class="summary-item">
-<img src="https://images.unsplash.com/photo-1649868592193-f1474cb13be9?q=80&amp;w=1470&amp;auto=format&amp;fit=crop&amp;ixlib=rb-4.1.0&amp;ixid=NHwxMjA3fDA%3D" class="summary-thumb" alt="" width="200" height="200" loading="lazy">
-<div class="summary-item-name">Gaiwan porcelanowy, 120 ml<br><small class="text-muted-brand">1 × 129,00 zł</small></div>
-<span class="fw-bold">129,00 zł</span>
-</div>
-<div class="summary-row"><span>Suma częściowa</span><span>207,00 zł</span></div>
-<div class="summary-row"><span>Dostawa (Kurier)</span><span>14,99 zł</span></div>
-<div class="summary-row summary-total"><span>Łącznie brutto</span><span>221,99 zł</span></div>
-<button type="submit" class="btn btn-primary btn-lg w-100 mt-4">Kupuję i płacę</button>
+<div id="order-items"></div>
+<p id="order-empty" class="mb-3" hidden="">Twój koszyk jest pusty. <a href="sklep.html">Przejdź do sklepu</a>, aby dodać produkty.</p>
+<div class="summary-row"><span>Suma częściowa</span><span id="sum-subtotal">0,00 zł</span></div>
+<div class="summary-row"><span id="sum-shipping-label">Dostawa (Kurier)</span><span id="sum-shipping">0,00 zł</span></div>
+<div class="summary-row summary-total"><span>Łącznie brutto</span><span id="sum-total">0,00 zł</span></div>
+<button type="submit" class="btn btn-primary btn-lg w-100 mt-4" id="submit-order">Kupuję i płacę</button>
 <p class="mt-3 mb-0 text-center"><a href="koszyk.html" class="small"><i class="bi bi-arrow-left me-1" aria-hidden="true"></i>Wróć do koszyka</a></p>
 </aside>
 </div>
@@ -188,34 +156,9 @@
     </div>
 </main>
 
-  <footer class="site-footer">
-<div class="container">
-<div class="row g-4 align-items-center">
-<div class="col-md-6 text-center text-md-start">
-<a class="brand-logo footer-logo" href="index.html">TEA<span>logy</span></a>
-<p class="mb-0 mt-2 footer-meta">
-            TEAlogy sp. z o.o. · ul. Spokojna 12, 00-950 Warszawa<br>
-            NIP: 525-000-00-00 · REGON: 000000000
-</p>
-</div>
-<div class="col-md-6 text-center text-md-end">
-<p class="mb-0 footer-meta">© 2026 TEAlogy. Wszelkie prawa zastrzeżone.</p>
-</div>
-</div>
-</div>
-</footer>
+  <footer class="site-footer" id="site-footer"></footer>
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
-<script>
-    document.querySelectorAll('#mainNav a').forEach(function (link) {
-      link.addEventListener('click', function () {
-        var menu = document.getElementById('mainNav');
-        if (menu.classList.contains('show')) {
-          bootstrap.Collapse.getOrCreateInstance(menu).hide();
-        }
-      });
-    });
-</script>
-
-
+  <script src="cart.js"></script>
+<script src="layout.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
 </body></html>
