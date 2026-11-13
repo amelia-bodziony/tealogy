@@ -1596,3 +1596,131 @@ a { transition: color 0.2s ease; }
  --bs-btn-active-color: var(--brand-white);
  --bs-btn-focus-shadow-rgb: 53, 84, 67;
  }
+
+/* ==== CELE DOTYKOWE (min. 44×44 px) ==== */
+.btn {
+ display: inline-flex;
+ align-items: center;
+ justify-content: center;
+ min-height: 44px;
+ }
+
+.btn-sm { min-height: 44px; }
+
+.nav-link,
+ .page-link,
+ .tag-pill,
+ .share-btn,
+ .cart-remove,
+ .category-list a {
+ min-height: 44px;
+ }
+
+.site-nav .nav-link {
+ display: flex;
+ align-items: center;
+ }
+
+.page-link,
+ .tag-pill,
+ .cart-remove {
+ display: inline-flex;
+ align-items: center;
+ justify-content: center;
+ }
+
+.page-link,
+ .cart-remove,
+ .share-btn,
+ .nav-icon-link {
+ min-width: 44px;
+ min-height: 44px;
+ }
+
+.navbar-toggler {
+ display: inline-flex;
+ align-items: center;
+ justify-content: center;
+ min-width: 44px;
+ min-height: 44px;
+ }
+
+.btn-close {
+ box-sizing: border-box;
+ width: 44px;
+ height: 44px;
+ min-height: 44px;
+ padding: 0;
+ background-size: 1em auto;
+ }
+
+.alert-dismissible { padding-right: 3.5rem; }
+
+.alert-dismissible .btn-close {
+ top: 0.25rem;
+ right: 0.25rem;
+ padding: 0;
+ }
+
+.form-select-sm { min-height: 44px; }
+
+/* ==== KOSZYK DYNAMICZNY ==== */
+.product-actions {
+ display: flex;
+ flex-wrap: wrap;
+ gap: 0.5rem;
+ margin-top: auto;
+ }
+
+.product-actions .product-cta {
+ margin-top: 0;
+ align-self: auto;
+ }
+
+.add-to-cart {
+ position: relative;
+ z-index: 2;
+ }
+
+.cart-badge[hidden] { display: none; }
+
+.cart-toast {
+ position: fixed;
+ right: 1rem;
+ bottom: 1rem;
+ left: 1rem;
+ z-index: 1080;
+ display: flex;
+ flex-wrap: wrap;
+ align-items: center;
+ justify-content: space-between;
+ gap: 0.25rem 1rem;
+ max-width: 26rem;
+ margin-left: auto;
+ padding: 0.5rem 1.25rem;
+ background-color: var(--brand-primary);
+ color: var(--brand-white);
+ border-radius: 1rem;
+ box-shadow: 0 1rem 2rem -1rem rgba(41, 45, 41, 0.6);
+ }
+
+.cart-toast[hidden] { display: none; }
+
+.cart-toast a {
+ display: inline-flex;
+ align-items: center;
+ min-height: 44px;
+ color: var(--brand-cream);
+ font-weight: 700;
+ }
+
+.empty-cart {
+ padding: 3rem 1.5rem;
+ text-align: center;
+ background-color: var(--brand-cream);
+ border-radius: 1.25rem;
+ }
+
+#order-empty { color: var(--brand-muted); }
+
+h1[tabindex="-1"]:focus { outline: none; }
